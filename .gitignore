@@ -33,3 +33,5 @@ poetry.lock
 # Black and isort specific
 .mypy_cache/
 .pytest_cache/
+
+*.html
