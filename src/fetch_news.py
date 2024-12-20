@@ -5,7 +5,7 @@ from typing import Optional
 import requests
 from bs4 import BeautifulSoup, Tag
 
-from project_config import YahooConfig
+from src.project_config import YahooConfig
 
 logging.basicConfig(
     level=logging.INFO,
@@ -189,9 +189,3 @@ class YahooCryptoNewsScraper(YahooConfig):
             logger.warning("No <time> tag found for article at URL: %s", article_url)
 
         return article_date
-
-
-if __name__ == "__main__":
-
-    fetcher = YahooCryptoNewsScraper()
-    raw_data = fetcher.fetch_news()

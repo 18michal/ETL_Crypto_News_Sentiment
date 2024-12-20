@@ -9,8 +9,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
-from fetch_news import YahooCryptoNewsScraper
-from project_config import YahooConfig
+from src.project_config import YahooConfig
 
 logging.basicConfig(
     level=logging.INFO,
@@ -114,15 +113,3 @@ class CryptoNewsTransformer(YahooConfig):
         except Exception as e:
             logger.error("An unexpected error occurred: %s", str(e))
             raise
-
-
-if __name__ == "__main__":
-
-    fetcher = YahooCryptoNewsScraper()
-    data_fetched = fetcher.fetch_news()
-
-    transformer = CryptoNewsTransformer()
-    transformed_data = transformer.transform_news(raw_data=data_fetched)
-
-    for key in transformed_data[0]:
-        print(f"Key: {key}, Value: {transformed_data[0][key]}")
