@@ -22,16 +22,16 @@ def load_data_to_db(data: list[dict[str, str]]):
             try:
                 cursor.execute(
                     insert_query,
-                    row.get("Date"),
-                    row.get("Title"),
-                    row.get("Link"),
-                    row.get("Content"),
-                    row.get("PreprocessedContent"),
-                    row.get("Sentiment"),
+                    row.get("date"),
+                    row.get("title"),
+                    row.get("link"),
+                    row.get("content"),
+                    row.get("preprocessed_content"),
+                    row.get("sentiment"),
                 )
             except IntegrityError:
                 print(
-                    f"Skipping {row.get('Title')} ({row.get('Date')}) as it already exists in the database."
+                    f"Skipping {row.get('title')} ({row.get('date')}) as it already exists in the database."
                 )
 
     conn.commit()
