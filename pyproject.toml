@@ -1,18 +1,26 @@
 [tool.poetry]
 name = "etl-crypto-news-sentiment"
 version = "0.1.0"
-description = "n/a"
+description = "ETL pipeline for analyzing cryptocurrency news sentiment."
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
+requests = "^2.32.3"
+beautifulsoup4 = "^4.12.3"
+logging = "^0.4.9.6"
+nltk = "^3.9.1"
+joblib = "^1.4.2"
+scikit-learn = "1.5.2"
 
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.10.0"
 isort = "^5.13.2"
 python-dotenv = "^1.0.1"
+ipykernel = "^6.29.5"
 
 [build-system]
 requires = ["poetry-core"]

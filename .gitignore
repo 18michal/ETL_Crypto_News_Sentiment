@@ -1,0 +1,37 @@
+# Byte-compiled Python files
+__pycache__/
+
+# PySpark and Spark-specific
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Virtual environments
+.venv/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Poetry files for lock and cache
+poetry.lock
+.cache/
+
+# Black and isort specific
+.mypy_cache/
+.pytest_cache/
+
+*.html
