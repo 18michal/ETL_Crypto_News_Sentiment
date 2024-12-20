@@ -15,22 +15,7 @@ The pipeline is fully automated, designed to run on a schedule to scrape, prepro
 
 ## Folder Structure
 
-src/
- ├── ml_models/
- │ ├── crypto_sentiment_model/
- │ ├── crypto_sentiment_modeltfidf_vectorizer/
- ├── nltk_data/
- ├── db_utils_helper.py
- ├── fetch_news.py
- ├── load_news.py
- ├── project_config.py
- ├── transform_news.py
- app.p
- .gitignore
- .env
- poetry.lock
- poetry.toml
- README.md
+src/<br> ├── ml_models/<br> │ ├── crypto_sentiment_model/<br> │ ├── crypto_sentiment_modeltfidf_vectorizer/<br> ├── nltk_data/<br> ├── db_utils_helper.py<br> ├── fetch_news.py<br> ├── load_news.py<br> ├── project_config.py<br> ├── transform_news.py<br> app.p<br> .gitignore<br> .env<br> poetry.lock<br> poetry.toml<br> README.md
 
 
 ### `src/`
