@@ -20,3 +20,7 @@ class YahooConfig:
         "Recommended Stories",
         "Sign in to access your portfolio",
     ]
+
+    PATH_SENTIMENT_MODEL = "ml_models\\crypto_sentiment_model.joblib"
+    PATH_SENTIMENT__VECTORIZER = "ml_models\\tfidf_vectorizer.joblib"
+    FOLDER_NLTK_DATA = "nltk_data"

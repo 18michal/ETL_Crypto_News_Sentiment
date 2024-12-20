@@ -8,7 +8,8 @@ from bs4 import BeautifulSoup, Tag
 from project_config import YahooConfig
 
 logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(funcName)s - %(levelname)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
 
@@ -76,10 +77,10 @@ class YahooCryptoNewsScraper(YahooConfig):
     def _fetch_crypto_news(self) -> list[dict[str, Optional[str]]]:
         """Fetch titles and links from the main page"""
         try:
-            response = requests.get(self.site_url, timeout=10)
+            response = requests.get(self.site_url, timeout=20)
 
             if response.status_code != 200:
-                logger.error("Failed to fetch page: %s", response.status_code)
+                logger.error("%s", response.status_code)
                 return []
 
             soup = BeautifulSoup(response.content, "html.parser")
@@ -118,11 +119,11 @@ class YahooCryptoNewsScraper(YahooConfig):
             str: The cleaned article content, or None if the extraction fails.
         """
         try:
-            response = requests.get(article_url, timeout=10)
+            response = requests.get(article_url, timeout=20)
             response.raise_for_status()
 
         except requests.RequestException as e:
-            logger.error("Failed to fetch page at %s: %s", article_url, e)
+            logger.error(e)
             return None
 
         soup = BeautifulSoup(response.content, "html.parser")
@@ -160,11 +161,11 @@ class YahooCryptoNewsScraper(YahooConfig):
             str: The publication date, or None if the extraction fails.
         """
         try:
-            response = requests.get(article_url, timeout=10)
+            response = requests.get(article_url, timeout=20)
             response.raise_for_status()
 
         except requests.RequestException as e:
-            logger.error("Failed to fetch page at %s: %s", article_url, e)
+            logger.error(e)
             return None
 
         soup = BeautifulSoup(response.content, "html.parser")
