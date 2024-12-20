@@ -35,3 +35,4 @@ poetry.lock
 .pytest_cache/
 
 *.html
+.env
